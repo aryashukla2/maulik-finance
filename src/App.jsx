@@ -68,9 +68,15 @@ const Slide = ({ title, highlight, subtitle, desc, image, icon }) => (
           {desc}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
-          <button className="w-full sm:w-auto bg-stone-900 text-white px-8 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-stone-800 transition-all shadow-lg shadow-stone-100">
-            Book Service <ArrowRight size={16} />
-          </button>
+          <a
+            href={highlight.includes("Loan") ? "https://maulik.loan" : "#"}
+            target={highlight.includes("Loan") ? "_blank" : "_self"}
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto bg-stone-900 text-white px-8 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-stone-800 transition-all shadow-lg shadow-stone-100 no-underline"
+          >
+            {highlight.includes("Loan") ? "Start Application" : "Book Service"}
+            <ArrowRight size={16} />
+          </a>
           <div className="flex items-center gap-3">
             <div className="flex text-amber-500 scale-75">
               <Star size={16} fill="currentColor" />
@@ -117,10 +123,10 @@ export default function App() {
       icon: <PenTool size={12} />,
     },
     {
-      highlight: "Loan Specialist",
-      title: "Seamless",
-      subtitle: "Home Closings.",
-      desc: "Specialized in real estate loan signings. I ensure every deed and escrow document is executed with absolute precision.",
+      highlight: "Licensed Mortgage Loan Officer",
+      title: "Best Rates.",
+      subtitle: "250+ Lenders.",
+      desc: "Representing LoanFactory.com with exclusive access to top nationwide lenders. Expert mortgage support across California and 22 other states.",
       image: "https://i.imgur.com/Ln3Gaav.png",
       icon: <Briefcase size={12} />,
     },
