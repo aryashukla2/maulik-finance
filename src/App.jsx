@@ -152,10 +152,10 @@ export default function App() {
     {
       type: "notary",
       highlight: "Loan Signing Agent & Notary",
-      title: "Sunset District",
-      subtitle: "Expert Signings.",
+      title: "Secure Signing",
+      subtitle: "Verified Excellence.",
       desc: "NNA Certified Loan Signing Agent specializing in mortgage, refinance, and HELOC documents. Providing mobile notary services with professional accuracy across San Francisco.",
-      image: "https://i.imgur.com/TqVZQZ6.png",
+      image: "/notary.png",
       icon: <PenTool size={12} />,
     },
     {
@@ -164,7 +164,7 @@ export default function App() {
       title: "Best Rates.",
       subtitle: "Compare 250+ Lenders.",
       desc: "Access wholesale mortgage rates from 250+ nationwide lenders. I compare options, explain the numbers, and guide you from pre-approval to closing across California and 22 other states.",
-      image: "https://i.imgur.com/Ln3Gaav.png",
+      image: "/loan.png",
       icon: <Briefcase size={12} />,
     },
     {
@@ -173,7 +173,7 @@ export default function App() {
       title: "Reliable",
       subtitle: "Tax Support.",
       desc: "Organizing complex tax paperwork for small businesses and real estate investors. Clarity and compliance in every file.",
-      image: "https://i.imgur.com/cJzyHCI.png",
+      image: "/insurance.png",
       icon: <Calculator size={12} />,
     },
   ];
