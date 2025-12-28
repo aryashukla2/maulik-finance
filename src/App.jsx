@@ -74,7 +74,9 @@ const Slide = ({ title, highlight, subtitle, desc, image, icon }) => (
             rel="noopener noreferrer"
             className="w-full sm:w-auto bg-stone-900 text-white px-8 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-stone-800 transition-all shadow-lg shadow-stone-100 no-underline"
           >
-            {highlight.includes("Loan") ? "Start Application" : "Book Service"}
+            {highlight.includes("Loan")
+              ? "Check My Rate Options"
+              : "Book Service"}
             <ArrowRight size={16} />
           </a>
           <div className="flex items-center gap-3">
@@ -126,7 +128,7 @@ export default function App() {
       highlight: "Licensed Mortgage Loan Officer",
       title: "Best Rates.",
       subtitle: "250+ Lenders.",
-      desc: "Representing LoanFactory.com with exclusive access to top nationwide lenders. Expert mortgage support across California and 22 other states.",
+      desc: "Access wholesale mortgage rates from 250+ nationwide lenders and all with one trusted loan officer. I compare options, explain the numbers, and guide you from pre-approval to closing across California and 22 other states.",
       image: "https://i.imgur.com/Ln3Gaav.png",
       icon: <Briefcase size={12} />,
     },
