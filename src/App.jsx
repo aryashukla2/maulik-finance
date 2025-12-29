@@ -27,7 +27,7 @@ const Navbar = ({ activeIndex, scrollToSlide }) => {
         </div>
 
         <div className="hidden md:flex items-center gap-8">
-          {["Notary", "Loans", "Taxes"].map((label, index) => (
+          {["Notary", "Loans", "Insurance"].map((label, index) => (
             <button
               key={label}
               onClick={() => scrollToSlide(index)}
