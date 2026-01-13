@@ -277,7 +277,7 @@ const Slide = ({
       label: "Book Notary Service",
     },
     insurance: {
-      href: "mailto:MaulikShukla@yahoo.com",
+      href: "https://hgicrusade.com/maulikshukla",
       label: "Protect My Family",
     },
   };
@@ -373,7 +373,8 @@ export default function App() {
       phone: "(408) 394-6289",
       email: "MaulikShukla@yahoo.com",
       address: "2235 30th Ave, San Francisco, CA 94116",
-      website: "https://maulik.finance",
+      website:
+        "https://notary.snapdocs.com/notary-public/california/san-francisco/maulik-shukla",
     },
     loan: {
       title: "Loan Officer",
@@ -390,7 +391,7 @@ export default function App() {
       phone: "(408) 394-6289",
       email: "MaulikShukla@yahoo.com",
       address: "2235 30th Ave, San Francisco, CA 94116",
-      website: "https://maulik.finance",
+      website: "https://hgicrusade.com/maulikshukla",
     },
   };
 
