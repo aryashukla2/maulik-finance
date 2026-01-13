@@ -65,9 +65,9 @@ const Slide = ({ title, highlight, subtitle, desc, image, icon, type }) => {
       href: "https://notary.snapdocs.com/notary-public/california/san-francisco/maulik-shukla",
       label: "Book Notary Service",
     },
-    tax: {
+    insurance: {
       href: "mailto:your-email@example.com",
-      label: "Get in Touch",
+      label: "Protect My Family",
     },
   };
 
@@ -168,11 +168,11 @@ export default function App() {
       icon: <Briefcase size={12} />,
     },
     {
-      type: "tax",
-      highlight: "Tax Logistics",
-      title: "Reliable",
-      subtitle: "Tax Support.",
-      desc: "Organizing complex tax paperwork for small businesses and real estate investors. Clarity and compliance in every file.",
+      type: "insurance",
+      highlight: "Licensed Life Insurance Advisor",
+      title: "Protect What",
+      subtitle: "Matters Most.",
+      desc: "Life insurance built around your family, your income, and your long-term goals. I help you choose the right coverage — term or permanent — with clarity, confidence, and no pressure.",
       image: "/insurance.png",
       icon: <Calculator size={12} />,
     },
