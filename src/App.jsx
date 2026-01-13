@@ -172,7 +172,7 @@ export default function App() {
       highlight: "Licensed Life Insurance Advisor",
       title: "Protect What",
       subtitle: "Matters Most.",
-      desc: "Life insurance built around your family, your income, and your long-term goals. I help you choose the right coverage — term or permanent — with clarity, confidence, and no pressure.",
+      desc: "Life insurance built around your family, your income, and your long-term goals. I help you choose the right coverage, either term or permanent, with clarity, confidence, and no pressure.",
       image: "/insurance.png",
       icon: <Calculator size={12} />,
     },
