@@ -9,11 +9,212 @@ import {
   PenTool,
   Award,
   Trophy,
+  X,
+  Phone,
+  Mail,
+  MapPin,
+  ExternalLink,
 } from "lucide-react";
 
-/* Navbar */
+const BusinessCardModal = ({ isOpen, onClose, cardData }) => {
+  if (!isOpen) return null;
 
-const Navbar = ({ activeIndex, scrollToSlide }) => {
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center px-6">
+      <div
+        className="absolute inset-0 bg-stone-900/40 backdrop-blur-sm"
+        onClick={onClose}
+      />
+      <div className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 border border-stone-100">
+        <button
+          onClick={onClose}
+          className="absolute top-6 right-6 w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-stone-400 hover:text-stone-900 hover:bg-stone-200 transition-all"
+        >
+          <X size={16} />
+        </button>
+
+        <div className="text-center mb-6">
+          <h2 className="text-2xl font-bold text-stone-900 mb-1">
+            Maulik Shukla
+          </h2>
+          <p className="text-sm text-stone-500">{cardData?.title}</p>
+          {cardData?.license && (
+            <p className="text-xs text-stone-400 mt-1">{cardData.license}</p>
+          )}
+        </div>
+
+        <div className="space-y-4">
+          <div className="flex items-start gap-3 p-3 rounded-xl bg-stone-50 hover:bg-stone-100 transition-all">
+            <Phone size={18} className="text-stone-600 mt-0.5 flex-shrink-0" />
+            <div className="text-sm">
+              <div className="font-semibold text-stone-900">Direct</div>
+              <a
+                href={`tel:${cardData?.phone}`}
+                className="text-stone-600 hover:text-stone-900 no-underline"
+              >
+                {cardData?.phone}
+              </a>
+            </div>
+          </div>
+
+          {cardData?.corporatePhone && (
+            <div className="flex items-start gap-3 p-3 rounded-xl bg-stone-50 hover:bg-stone-100 transition-all">
+              <Phone
+                size={18}
+                className="text-stone-600 mt-0.5 flex-shrink-0"
+              />
+              <div className="text-sm">
+                <div className="font-semibold text-stone-900">Corporate</div>
+                <a
+                  href={`tel:${cardData.corporatePhone}`}
+                  className="text-stone-600 hover:text-stone-900 no-underline"
+                >
+                  {cardData.corporatePhone}
+                </a>
+              </div>
+            </div>
+          )}
+
+          <div className="flex items-start gap-3 p-3 rounded-xl bg-stone-50 hover:bg-stone-100 transition-all">
+            <Mail size={18} className="text-stone-600 mt-0.5 flex-shrink-0" />
+            <div className="text-sm">
+              <div className="font-semibold text-stone-900">Email</div>
+              <a
+                href={`mailto:${cardData?.email}`}
+                className="text-stone-600 hover:text-stone-900 no-underline break-all"
+              >
+                {cardData?.email}
+              </a>
+            </div>
+          </div>
+
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+              cardData?.address || ""
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-start gap-3 p-3 rounded-xl bg-stone-50 hover:bg-stone-100 transition-all no-underline cursor-pointer"
+          >
+            <MapPin size={18} className="text-stone-600 mt-0.5 flex-shrink-0" />
+            <div className="text-sm">
+              <div className="font-semibold text-stone-900">Address</div>
+              <p className="text-stone-600">{cardData?.address}</p>
+            </div>
+          </a>
+
+          {cardData?.website && (
+            <a
+              href={cardData.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full p-3 rounded-xl bg-stone-900 text-white font-semibold text-sm hover:bg-stone-800 transition-all no-underline"
+            >
+              Visit Website
+              <ExternalLink size={16} />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const UniversalContactModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center px-6">
+      <div
+        className="absolute inset-0 bg-stone-900/40 backdrop-blur-sm"
+        onClick={onClose}
+      />
+      <div className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 border border-stone-100">
+        <button
+          onClick={onClose}
+          className="absolute top-6 right-6 w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-stone-400 hover:text-stone-900 hover:bg-stone-200 transition-all"
+        >
+          <X size={16} />
+        </button>
+
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-stone-900 mb-2">
+            Let's Connect
+          </h2>
+          <p className="text-sm text-stone-500">
+            Ready to discuss your needs? Reach out today.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          <a
+            href="tel:(408) 394-6289"
+            className="flex items-center gap-4 p-4 rounded-xl bg-stone-50 hover:bg-stone-900 hover:text-white transition-all group no-underline"
+          >
+            <div className="w-12 h-12 rounded-full bg-stone-900 group-hover:bg-white flex items-center justify-center flex-shrink-0">
+              <Phone
+                size={20}
+                className="text-white group-hover:text-stone-900"
+              />
+            </div>
+            <div className="text-left">
+              <div className="text-xs font-semibold text-stone-400 group-hover:text-stone-300 uppercase tracking-wider">
+                Call Direct
+              </div>
+              <div className="text-lg font-bold text-stone-900 group-hover:text-white">
+                (408) 394-6289
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="mailto:MaulikShukla@yahoo.com"
+            className="flex items-center gap-4 p-4 rounded-xl bg-stone-50 hover:bg-stone-900 hover:text-white transition-all group no-underline"
+          >
+            <div className="w-12 h-12 rounded-full bg-stone-900 group-hover:bg-white flex items-center justify-center flex-shrink-0">
+              <Mail
+                size={20}
+                className="text-white group-hover:text-stone-900"
+              />
+            </div>
+            <div className="text-left">
+              <div className="text-xs font-semibold text-stone-400 group-hover:text-stone-300 uppercase tracking-wider">
+                Email Me
+              </div>
+              <div className="text-sm font-bold text-stone-900 group-hover:text-white break-all">
+                MaulikShukla@yahoo.com
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=San+Francisco+Bay+Area"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 p-4 rounded-xl bg-stone-50 hover:bg-stone-900 hover:text-white transition-all group no-underline cursor-pointer"
+          >
+            <div className="w-12 h-12 rounded-full bg-stone-900 group-hover:bg-white flex items-center justify-center flex-shrink-0">
+              <MapPin
+                size={20}
+                className="text-white group-hover:text-stone-900"
+              />
+            </div>
+            <div className="text-left">
+              <div className="text-xs font-semibold text-stone-400 group-hover:text-stone-300 uppercase tracking-wider">
+                Office Location
+              </div>
+              <div className="text-sm font-bold text-stone-900 group-hover:text-white">
+                2235 30th Ave, San Francisco, CA 94116
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Navbar = ({ activeIndex, scrollToSlide, onContactClick }) => {
   return (
     <div className="fixed top-8 left-0 w-full z-50 flex justify-center px-6 pointer-events-none">
       <nav className="pointer-events-auto transition-all duration-500 ease-in-out flex items-center justify-between bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.06)] px-5 py-3 rounded-2xl w-full max-w-4xl">
@@ -45,7 +246,10 @@ const Navbar = ({ activeIndex, scrollToSlide }) => {
           ))}
         </div>
 
-        <button className="bg-stone-900 text-white px-4 py-1.5 rounded-xl text-[11px] font-bold hover:bg-stone-800 transition-all active:scale-95">
+        <button
+          onClick={onContactClick}
+          className="bg-stone-900 text-white px-4 py-1.5 rounded-xl text-[11px] font-bold hover:bg-stone-800 transition-all active:scale-95"
+        >
           Get in Touch
         </button>
       </nav>
@@ -53,9 +257,16 @@ const Navbar = ({ activeIndex, scrollToSlide }) => {
   );
 };
 
-/* Slide */
-
-const Slide = ({ title, highlight, subtitle, desc, image, icon, type }) => {
+const Slide = ({
+  title,
+  highlight,
+  subtitle,
+  desc,
+  image,
+  icon,
+  type,
+  onShowCard,
+}) => {
   const ctaConfig = {
     loan: {
       href: "https://maulik.loan",
@@ -66,7 +277,7 @@ const Slide = ({ title, highlight, subtitle, desc, image, icon, type }) => {
       label: "Book Notary Service",
     },
     insurance: {
-      href: "mailto:your-email@example.com",
+      href: "mailto:MaulikShukla@yahoo.com",
       label: "Protect My Family",
     },
   };
@@ -100,7 +311,7 @@ const Slide = ({ title, highlight, subtitle, desc, image, icon, type }) => {
             </div>
           )}
 
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
             <a
               href={href}
               target="_blank"
@@ -111,16 +322,23 @@ const Slide = ({ title, highlight, subtitle, desc, image, icon, type }) => {
               <ArrowRight size={16} />
             </a>
 
-            <div className="flex items-center gap-3">
-              <div className="flex text-amber-500 scale-75">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} fill="currentColor" />
-                ))}
-              </div>
-              <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest">
-                Client Choice
-              </span>
+            <button
+              onClick={onShowCard}
+              className="w-full sm:w-auto bg-white border border-stone-200 text-stone-900 px-8 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-stone-50 hover:border-stone-900 transition-all"
+            >
+              View Contact Card
+            </button>
+          </div>
+
+          <div className="flex items-center justify-center lg:justify-start gap-3 mt-6">
+            <div className="flex text-amber-500 scale-75">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={16} fill="currentColor" />
+              ))}
             </div>
+            <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest">
+              Client Choice
+            </span>
           </div>
         </div>
 
@@ -142,11 +360,44 @@ const Slide = ({ title, highlight, subtitle, desc, image, icon, type }) => {
   );
 };
 
-/* App */
-
 export default function App() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeCard, setActiveCard] = useState(null);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const scrollRef = useRef(null);
+
+  const businessCards = {
+    notary: {
+      title: "California Notary Public | Loan Signing Agent",
+      phone: "(408) 394-6289",
+      email: "MaulikShukla@yahoo.com",
+      address: "2235 30th Ave, San Francisco, CA 94116",
+      website: "https://maulik.finance",
+    },
+    loan: {
+      title: "Loan Officer",
+      license: "NMLS: #2680591; CO-NMLS: #320841",
+      phone: "(408) 394-6289",
+      corporatePhone: "(660) 333-3333",
+      email: "MaulikShukla@yahoo.com",
+      address: "2195 Tully Road, San Jose, CA 95122",
+      website: "https://www.loanfactory.com/maulikshukla",
+    },
+    insurance: {
+      title: "Financial Professional | Life Insurance & Annuities",
+      license: "California License # 4517833",
+      phone: "(408) 394-6289",
+      email: "MaulikShukla@yahoo.com",
+      address: "2235 30th Ave, San Francisco, CA 94116",
+      website: "https://maulik.finance",
+    },
+  };
+
+  const showCard = (type) => {
+    setActiveCard(businessCards[type]);
+    setIsModalOpen(true);
+  };
 
   const slides = [
     {
@@ -199,7 +450,22 @@ export default function App() {
 
   return (
     <div className="bg-stone-50 h-screen w-full overflow-hidden flex flex-col relative font-sans">
-      <Navbar activeIndex={activeIndex} scrollToSlide={scrollToSlide} />
+      <BusinessCardModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        cardData={activeCard}
+      />
+
+      <UniversalContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
+
+      <Navbar
+        activeIndex={activeIndex}
+        scrollToSlide={scrollToSlide}
+        onContactClick={() => setIsContactModalOpen(true)}
+      />
 
       <div
         ref={scrollRef}
@@ -207,11 +473,10 @@ export default function App() {
         className="flex-grow flex overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth"
       >
         {slides.map((slide, i) => (
-          <Slide key={i} {...slide} />
+          <Slide key={i} {...slide} onShowCard={() => showCard(slide.type)} />
         ))}
       </div>
 
-      {/* Navigation Controls */}
       <div className="absolute bottom-12 left-0 w-full px-12 flex justify-between items-center pointer-events-none">
         <div className="flex gap-2 pointer-events-auto">
           {slides.map((_, i) => (
