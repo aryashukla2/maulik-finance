@@ -20,7 +20,7 @@ const BusinessCardModal = ({ isOpen, onClose, cardData }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center px-6">
+    <div className="fixed inset-0 z-100 flex items-center justify-center px-6">
       <div
         className="absolute inset-0 bg-stone-900/40 backdrop-blur-sm"
         onClick={onClose}
@@ -45,7 +45,7 @@ const BusinessCardModal = ({ isOpen, onClose, cardData }) => {
 
         <div className="space-y-4">
           <div className="flex items-start gap-3 p-3 rounded-xl bg-stone-50 hover:bg-stone-100 transition-all">
-            <Phone size={18} className="text-stone-600 mt-0.5 flex-shrink-0" />
+            <Phone size={18} className="text-stone-600 mt-0.5 shrink-0" />
             <div className="text-sm">
               <div className="font-semibold text-stone-900">Direct</div>
               <a
@@ -59,10 +59,7 @@ const BusinessCardModal = ({ isOpen, onClose, cardData }) => {
 
           {cardData?.corporatePhone && (
             <div className="flex items-start gap-3 p-3 rounded-xl bg-stone-50 hover:bg-stone-100 transition-all">
-              <Phone
-                size={18}
-                className="text-stone-600 mt-0.5 flex-shrink-0"
-              />
+              <Phone size={18} className="text-stone-600 mt-0.5 shrink-0" />
               <div className="text-sm">
                 <div className="font-semibold text-stone-900">Corporate</div>
                 <a
@@ -76,7 +73,7 @@ const BusinessCardModal = ({ isOpen, onClose, cardData }) => {
           )}
 
           <div className="flex items-start gap-3 p-3 rounded-xl bg-stone-50 hover:bg-stone-100 transition-all">
-            <Mail size={18} className="text-stone-600 mt-0.5 flex-shrink-0" />
+            <Mail size={18} className="text-stone-600 mt-0.5 shrink-0" />
             <div className="text-sm">
               <div className="font-semibold text-stone-900">Email</div>
               <a
@@ -96,7 +93,7 @@ const BusinessCardModal = ({ isOpen, onClose, cardData }) => {
             rel="noopener noreferrer"
             className="flex items-start gap-3 p-3 rounded-xl bg-stone-50 hover:bg-stone-100 transition-all no-underline cursor-pointer"
           >
-            <MapPin size={18} className="text-stone-600 mt-0.5 flex-shrink-0" />
+            <MapPin size={18} className="text-stone-600 mt-0.5 shrink-0" />
             <div className="text-sm">
               <div className="font-semibold text-stone-900">Address</div>
               <p className="text-stone-600">{cardData?.address}</p>
@@ -124,7 +121,7 @@ const UniversalContactModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center px-6">
+    <div className="fixed inset-0 z-100 flex items-center justify-center px-6">
       <div
         className="absolute inset-0 bg-stone-900/40 backdrop-blur-sm"
         onClick={onClose}
@@ -151,7 +148,7 @@ const UniversalContactModal = ({ isOpen, onClose }) => {
             href="tel:(408) 394-6289"
             className="flex items-center gap-4 p-4 rounded-xl bg-stone-50 hover:bg-stone-900 hover:text-white transition-all group no-underline"
           >
-            <div className="w-12 h-12 rounded-full bg-stone-900 group-hover:bg-white flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 rounded-full bg-stone-900 group-hover:bg-white flex items-center justify-center shrink-0">
               <Phone
                 size={20}
                 className="text-white group-hover:text-stone-900"
@@ -171,7 +168,7 @@ const UniversalContactModal = ({ isOpen, onClose }) => {
             href="mailto:MaulikShukla@yahoo.com"
             className="flex items-center gap-4 p-4 rounded-xl bg-stone-50 hover:bg-stone-900 hover:text-white transition-all group no-underline"
           >
-            <div className="w-12 h-12 rounded-full bg-stone-900 group-hover:bg-white flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 rounded-full bg-stone-900 group-hover:bg-white flex items-center justify-center shrink-0">
               <Mail
                 size={20}
                 className="text-white group-hover:text-stone-900"
@@ -193,7 +190,7 @@ const UniversalContactModal = ({ isOpen, onClose }) => {
             rel="noopener noreferrer"
             className="flex items-center gap-4 p-4 rounded-xl bg-stone-50 hover:bg-stone-900 hover:text-white transition-all group no-underline cursor-pointer"
           >
-            <div className="w-12 h-12 rounded-full bg-stone-900 group-hover:bg-white flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 rounded-full bg-stone-900 group-hover:bg-white flex items-center justify-center shrink-0">
               <MapPin
                 size={20}
                 className="text-white group-hover:text-stone-900"
@@ -285,7 +282,7 @@ const Slide = ({
   const { href, label } = ctaConfig[type];
 
   return (
-    <div className="w-full h-full flex-shrink-0 flex items-center justify-center px-6 md:px-12 pt-12">
+    <div className="w-full h-full shrink-0 flex items-center justify-center px-6 md:px-12 pt-12">
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div className="text-center lg:text-left">
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-stone-100 text-stone-600 text-[9px] font-bold uppercase tracking-[0.15em] mb-6">
@@ -343,13 +340,13 @@ const Slide = ({
         </div>
 
         <div className="flex justify-center lg:justify-end relative">
-          <div className="relative w-full max-w-[280px] md:max-w-[340px] aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border-[6px] border-white">
+          <div className="relative w-full max-w-70 md:max-w-85 aspect-4/5 rounded-[2.5rem] overflow-hidden shadow-2xl border-[6px] border-white">
             <img
               src={image}
               alt={title}
               className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-stone-900/20 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-stone-900/20 to-transparent" />
           </div>
 
           <div className="absolute -z-10 -bottom-6 -left-6 w-32 h-32 bg-stone-100 rounded-full blur-2xl" />
@@ -471,7 +468,7 @@ export default function App() {
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex-grow flex overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth"
+        className="grow flex overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth"
       >
         {slides.map((slide, i) => (
           <Slide key={i} {...slide} onShowCard={() => showCard(slide.type)} />
@@ -509,7 +506,7 @@ export default function App() {
         </div>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-6 opacity-30 grayscale pointer-events-none hidden md:flex">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 items-center gap-6 opacity-30 grayscale pointer-events-none hidden md:flex">
         <span className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2">
           <Award size={12} /> NNA Certified
         </span>
